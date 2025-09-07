@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(220 20% 97%);
+  --foreground: hsl(220 10% 15%);
+  --card: hsla(220 20% 95% / 0.8);
+  --card-foreground: hsl(220 10% 15%);
+  --popover: hsl(220 20% 95%);
+  --popover-foreground: hsl(220 10% 15%);
+  --primary: hsl(210 100% 50%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(190 100% 60%);
+  --secondary-foreground: hsl(220 10% 15%);
+  --muted: hsla(220 15% 85% / 0.6);
+  --muted-foreground: hsl(220 10% 45%);
+  --accent: hsla(210 100% 95% / 0.9);
+  --accent-foreground: hsl(220 10% 15%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsla(220 15% 80% / 0.4);
+  --input: hsla(220 20% 95% / 0.8);
+  --ring: hsl(210 100% 50%);
+  --chart-1: hsl(210 100% 50%);
+  --chart-2: hsl(190 100% 60%);
+  --chart-3: hsl(42 92% 56%);
+  --chart-4: hsl(147 79% 42%);
+  --chart-5: hsl(341 75% 51%);
+  --sidebar: hsla(220 20% 95% / 0.8);
+  --sidebar-foreground: hsl(220 10% 15%);
+  --sidebar-primary: hsl(210 100% 50%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsla(210 100% 95% / 0.9);
+  --sidebar-accent-foreground: hsl(220 10% 15%);
+  --sidebar-border: hsla(220 15% 80% / 0.4);
+  --sidebar-ring: hsl(210 100% 50%);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --radius: 1.5rem;
+}
+
+.dark {
+  --background: hsl(220 15% 8%);
+  --foreground: hsl(220 10% 90%);
+  --card: hsla(220 15% 12% / 0.8);
+  --card-foreground: hsl(220 10% 90%);
+  --popover: hsl(220 15% 8%);
+  --popover-foreground: hsl(220 10% 90%);
+  --primary: hsl(210 100% 55%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(190 100% 65%);
+  --secondary-foreground: hsl(220 10% 15%);
+  --muted: hsla(220 15% 20% / 0.6);
+  --muted-foreground: hsl(220 10% 60%);
+  --accent: hsla(210 100% 15% / 0.9);
+  --accent-foreground: hsl(210 100% 55%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsla(220 15% 25% / 0.4);
+  --input: hsla(220 15% 12% / 0.8);
+  --ring: hsl(210 100% 55%);
+  --sidebar: hsla(220 15% 12% / 0.8);
+  --sidebar-foreground: hsl(220 10% 90%);
+  --sidebar-primary: hsl(210 100% 55%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsla(210 100% 15% / 0.9);
+  --sidebar-accent-foreground: hsl(210 100% 55%);
+  --sidebar-border: hsla(220 15% 25% / 0.4);
+  --sidebar-ring: hsl(210 100% 55%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply text-foreground font-sans antialiased;
+    background: linear-gradient(-45deg, 
+      hsl(180 100% 75%), /* turquoise */
+      hsl(160 100% 70%), /* green-turquoise */
+      hsl(120 100% 75%), /* green */
+      hsl(280 100% 85%), /* purple */
+      hsl(320 100% 85%), /* pink */
+      hsl(200 100% 85%), /* light blue */
+      hsl(220 100% 80%), /* light blue 2 */
+      hsl(180 100% 75%)  /* back to turquoise */
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glass-morphism {
+  background: hsla(220 20% 95% / 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsla(220 15% 80% / 0.2);
+}
+
+.glass-card {
+  background: hsla(220 20% 95% / 0.4);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid hsla(220 15% 80% / 0.3);
+  box-shadow: 0 8px 32px hsla(220 20% 60% / 0.1);
+}
+
+.hero-text {
+  background: linear-gradient(135deg, hsl(210 100% 50%), hsl(190 100% 60%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsla(210 100% 60% / 0.1), hsla(190 100% 70% / 0.1));
+  animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-20px) translateX(10px) rotate(90deg); 
+  }
+  50% { 
+    transform: translateY(-40px) translateX(-10px) rotate(180deg); 
+  }
+  75% { 
+    transform: translateY(-20px) translateX(15px) rotate(270deg); 
+  }
+}
+
+.form-input {
+  background: hsla(220 20% 95% / 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsla(220 15% 80% / 0.3);
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  background: hsla(220 20% 95% / 0.7);
+  border-color: hsl(210 100% 50%);
+  box-shadow: 0 0 0 3px hsla(210 100% 50% / 0.1);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.logo-transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
